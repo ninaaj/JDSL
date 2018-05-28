@@ -1,0 +1,66 @@
+program LeapYear.java
+
+header
+course_id CSCI 111-4
+student_name Christina Trotter
+student_id 10373033
+program_id 5
+due_date 5/5/18
+honor_code In keeping with the Honor Code of UM, I have neither given nor received assistance from anyone other than the instructor.
+program_description This program determines whether an input year is a leap year.
+end
+
+import Scanner 
+
+class LeapYear
+
+method main 
+
+comment variables and Scanner object
+variable String again
+variable int year
+object Scanner scan
+variable boolean leap
+
+comment instantiate Scanner object and get user input
+assignment scan Scanner(System.in)
+print Do you want to enter a year? yes/no:
+assignment again scan.nextLine()
+
+statement while again.equals("yes")
+print Enter a 4-digit year:
+assignment year scan.nextInt()
+comment call user-defined method 
+assignment leap isLeap(year)
+
+statement if leap
+print %d is a leap year.\n | year
+end
+
+statement else
+print %d is not a leap year.\n | year
+end
+
+fragment scan.nextLine()
+
+print \nDo you want to enter a year? yes/no: 
+assignment again scan.nextLine()
+end
+
+end
+
+comment user-defined isLeap method
+
+method isLeap boolean int year
+
+statement if (year % 4) == 0 && (year % 100) != 0 || (year % 100) == 0 && (year % 400) == 0
+return true
+end
+
+statement else
+return false
+end
+
+end
+
+end
